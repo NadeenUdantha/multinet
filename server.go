@@ -62,6 +62,9 @@ func (s *Server) Serve() error {
 }
 
 func (s *Server) Close() error {
+	if s.l == nil {
+		return nil
+	}
 	return s.l.Close()
 }
 
