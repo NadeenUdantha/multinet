@@ -65,7 +65,7 @@ paths:
 ```
 
 ### TODO
-- Add prebuilt binaries
 - Add tests
+- Add default auto config
 
 For questions or feedback, contact me: [NadeenUdantha](https://github.com/NadeenUdantha) me@nadeen.lk
