@@ -12,19 +12,14 @@
 
 ## How to Use
 
-1. Clone the repository:
+1. Go to the [releases](https://github.com/NadeenUdantha/multinet/releases) page and download the latest correct binary for your platform/OS.
+
+2. Create a configuration file (`config.yaml`) to set up your internet connection details. See below for the configuration file structure.
+
+3. Run the application with your configuration file.
 
    ```bash
-   git clone https://github.com/NadeenUdantha/multinet.git
-   cd multinet/multinet
-   ```
-
-2. Edit the configuration file (`config.yaml`) to set up your internet connections.
-
-3. Build and run the application with your configuration file:
-
-   ```bash
-   go run main.go -cfg config.yaml
+   ./multinet -cfg config.yaml
    ```
 
 4. It will start a SOCKS5 proxy server at the address specified in your configuration. Point your applications to use this proxy. You can also use `tun2socks` for VPN-like functionality.
