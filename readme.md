@@ -8,7 +8,17 @@
 
 - Increase download speeds by connecting through multiple internet connections.
 - Path selection algorithms: `weighted-lru`, `roundrobin`, `random`, `hash`
-- Ability to route traffic through network adapters or via another proxy server.
+- Ability to route traffic through network adapters or through another proxy server.
+
+## How It Works
+
+MultiNet operates by routing traffic through multiple network paths selected using an algorithm. When multiple network connections are available, it can split data transfer across them, effectively increasing total bandwidth by using the aggregate speeds of each connection.
+
+This method works best for applications that establish multiple parallel connections. However, the impact is minimal for single-connection downloads, which remain limited to a single network path. MultiNet can be used alongside optimized downloaders, such as IDM, to maximize download speeds. This works for uploads too. You must have a computer with enough resources to handle these speeds (disk write speed, etc.)
+
+### Practical Application
+
+I made this for game downloading: when downloading a 20GB Valorant update using the Riot Client, it creates 4 connections to their servers. When using this application with tun2socks, these 4 connections go through different network adapters and different internet connections. My test setup had 3 internet connections with 3 ISPs: ~30MB/s fiber and 2x ~4MB/s USB tethering, giving ~38MB/s download speed, resulting in a ~27% speed increase.
 
 ## How to Use
 
@@ -22,11 +32,11 @@
    ./multinet -cfg config.yaml
    ```
 
-4. It will start a SOCKS5 proxy server at the address specified in your configuration. Point your applications to use this proxy. You can also use `tun2socks` for VPN-like functionality.
+4. It will start a SOCKS5 proxy server at the address specified in your configuration. Point your applications to use this proxy server. You can also use `tun2socks` for VPN-like functionality.
 
 ### Configuration
 
-You configure MultiNet using a YAML file. Here’s an example configuration:
+You can configure MultiNet using a YAML file. Here’s an example configuration:
 
 ```yaml
 # The algorithm used for selecting the network path.
@@ -62,5 +72,9 @@ paths:
 ### TODO
 - Add tests
 - Add default auto config
+- Create a simple UI
+- Add integrated VPN
+- More path selection algorithms
+- ???
 
 For questions or feedback, contact me: [NadeenUdantha](https://github.com/NadeenUdantha) me@nadeen.lk
