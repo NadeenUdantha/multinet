@@ -77,4 +77,6 @@ paths:
 - More path selection algorithms
 - ???
 
+[MultiNet](https://github.com/NadeenUdantha/multinet) by [NadeenUdantha](https://nadeen.lk) is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) 💀
+
 For questions or feedback, contact me: [NadeenUdantha](https://github.com/NadeenUdantha) me@nadeen.lk
