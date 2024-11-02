@@ -2,8 +2,6 @@
 
 **MultiNet** is a Go application that allows you to use multiple internet connections simultaneously. This can be used to combine the bandwidths of different connections.
 
-> **Warning**: Things might break. Use this application with care.
-
 ## Features
 
 - Increase download speeds by connecting through multiple internet connections.
